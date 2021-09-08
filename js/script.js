@@ -21,6 +21,9 @@ function showResult() {
     for (let i = 0; i < showScores.length; i++) {
       let playerName = showScores[i].toLowerCase().trim();
       let getPlayerScore = scoreStorage.getValue(playerName);
+      if (getPlayerScore === undefined) {
+        getPlayerScore = 0;
+      }
         resultHTML += (i + 1) + '. ' + showScores[i] + " " + getPlayerScore.score + '<br>';
     }
   } else {
