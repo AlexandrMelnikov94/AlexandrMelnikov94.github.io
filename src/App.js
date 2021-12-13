@@ -84,9 +84,9 @@ export default class App extends Component {
               <div className="location">
                 {/*{weather.name},*/}
                 {/*{weather.sys.country}*/}
-                {weather.name = undefined ? (
-                  <p>Not found</p>
-                ):weather.name}
+                {weather.name !== undefined ? (
+                  weather.name
+                ): <p>Not found</p>}
               </div>
 
               <div className="date">
