@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { DateTime } from 'luxon';
+import React, {Component} from 'react';
+import {DateTime} from 'luxon';
 
 import './App.css';
 
@@ -25,7 +25,7 @@ export default class App extends Component {
   };
 
   sendRequest = () => {
-    const { searchQuery } = this.state;
+    const {searchQuery} = this.state;
 
     fetch(`${API_URL}weather?q=${searchQuery}&appid=${API_KEY}&units=metric`)
       .then((response) => response.json())
@@ -49,7 +49,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { searchQuery, weather, isLoading } = this.state;
+    const {searchQuery, weather, isLoading} = this.state;
 
     return (
       <div
@@ -67,22 +67,26 @@ export default class App extends Component {
         />
 
         {isLoading ? <div className="lds-roller">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
           : null}
 
         {weather ? (
           <div>
             <div className="location-wrapper">
               <div className="location">
-                {weather.name}, {weather.sys.country}
+                {/*{weather.name},*/}
+                {/*{weather.sys.country}*/}
+                {weather.name = undefined ? (
+                  <p>Not found</p>
+                ):weather.name}
               </div>
 
               <div className="date">
